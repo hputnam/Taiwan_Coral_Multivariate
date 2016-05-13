@@ -1,0 +1,3 @@
+#files to ingore in git repo
+symTyper-master/
+*.fna

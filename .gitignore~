@@ -1,0 +1,3 @@
+#files to ingore in git repo
+symTyper-master/
+RAnalysis/Data/Taiwan_Sym/Yost_2234F.fna
