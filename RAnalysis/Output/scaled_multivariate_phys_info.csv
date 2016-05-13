@@ -1,0 +1,38 @@
+"","Date","Habitat","Species","Site","Sym.Dom","CoralID","Sequin","Bead","Respiration","LipidID","ChlaID","ProteinID","SymDensID","AFDWID","DNAID","CNID","CatID","LPOID","vol.ml","SA.cm2"
+"1","6/3/12","Upwelling","Pocillopora","D","C1",9,"No Sequin","Dark Blue","Yes",1,1,1,1,1,212,1,"1","1",71,45.109525
+"3","6/3/12","Upwelling","Pocillopora","D","C1",10,"No Sequin","Black","Yes",3,2,2,2,2,213,2,"2","2",65,20.96761
+"5","6/3/12","Upwelling","Pocillopora","D","C1",5,"No Sequin","Pink","Yes",5,3,3,3,3,214,3,"3","3",39,25.507615
+"8","6/3/12","Upwelling","Pocillopora","D","C1",6,"No Sequin","White","Yes",8,4,4,4,4,215,4,"4","4",54,23.46169
+"2","6/3/12","Upwelling","Pocillopora","D","C1",8,"No Sequin","Red","Yes",2,5,5,5,5,216,5,"5","5",39,26.442895
+"17","6/3/12","Upwelling","Pocillopora","C","C1",3,"Black","Yellow","Yes",17,6,6,6,6,218,6,"6","6",98,54.929965
+"14","6/3/12","Upwelling","Pocillopora","C","C1",5,"Black","Pink","Yes",14,8,8,8,8,219,8,"8","8",65,32.34685
+"15","6/3/12","Upwelling","Pocillopora","C","C1",6,"Black","Red","Yes",15,9,9,9,9,220,9,"9","9",53,15.20005
+"13","6/3/12","Upwelling","Pocillopora","C","C1",8,"Black","Black","Yes",13,10,10,10,10,222,10,"10","10",104,36.964795
+"24","6/3/12","NonUpwelling","Pocillopora","B","C1",10,"Clear","Light Blue","Yes",24,13,13,13,13,224,13,"13","13",38,28.68367
+"30","6/3/12","NonUpwelling","Pocillopora","B","C1",3,"Clear","Yellow","Yes",30,14,14,14,14,225,14,"14","14",102,43.044115
+"21","6/3/12","NonUpwelling","Pocillopora","B","C1",9,"Clear","Green","Yes",21,15,15,15,15,226,15,"15","15",91,35.717755
+"22","6/3/12","NonUpwelling","Pocillopora","B","C1",8,"Clear","Purple","Yes",22,16,16,16,16,227,16,"16","16",87,30.339895
+"26","6/3/12","NonUpwelling","Pocillopora","B","C1",5,"Clear","No Bead","Yes",26,17,17,17,17,228,17,"17","17",78,29.8138
+"40","6/3/12","NonUpwelling","Pocillopora","A","C1",1,"Pink","No Bead","Yes",40,19,19,19,19,230,19,"19","19",95,35.46445
+"35","6/3/12","NonUpwelling","Pocillopora","A","C1",7,"Pink","Orange","Yes",35,20,20,20,20,231,20,"20","20",97,47.603605
+"31","6/3/12","NonUpwelling","Pocillopora","A","C1",8,"Pink","Brown","Yes",31,21,21,21,21,232,21,"21","21",70,40.433125
+"38","6/3/12","NonUpwelling","Pocillopora","A","C1",5,"Pink","Pink","Yes",38,22,22,22,22,233,22,"22","22",109,43.940425
+"39","6/3/12","NonUpwelling","Pocillopora","A","C1",4,"Pink","Black","Yes",39,23,23,23,23,234,23,"23","23",51,76.30501
+"47","6/6/12","NonUpwelling","Montipora","A","C31",7,"none","none","Yes",67,55,55,55,55,265,55,"55","55",16,5.49
+"45","6/6/12","NonUpwelling","Montipora","A","C31",5,"none","none","Yes",65,54,54,54,54,266,54,"54","54",44,9.25
+"46","6/6/12","NonUpwelling","Montipora","A","C31",6,"none","none","Yes",66,57,57,57,57,267,57,"57","57",30,9.5
+"43","6/6/12","NonUpwelling","Montipora","A","C31",3,"none","none","Yes",63,56,56,56,56,268,56,"56","56",27,7.74
+"55","6/6/12","NonUpwelling","Montipora","B","C31",5,"none","none","Yes",75,61,61,61,61,271,61,"61","61",53,14.02
+"57","6/6/12","NonUpwelling","Montipora","B","C31",7,"none","none","Yes",77,60,60,60,60,272,60,"60","60",32,9.5
+"52","6/6/12","NonUpwelling","Montipora","B","C15",2,"none","none","Yes",72,63,63,63,63,273,63,"63","63",23,9.75
+"56","6/6/12","NonUpwelling","Montipora","B","C31",6,"none","none","Yes",76,62,62,62,62,274,62,"62","62",82,20.79
+"53","6/6/12","NonUpwelling","Montipora","B","C31",3,"none","none","Yes",73,65,65,65,65,275,65,"65","65",39,9
+"62","6/9/12","Upwelling","Montipora","C","C15",2,"none","none","Yes",82,82,82,82,82,292,82,"82","82",74,23.55
+"65","6/9/12","Upwelling","Montipora","C","C15",5,"none","none","Yes",85,81,81,94,81,293,81,"81","81",48,14.52
+"64","6/9/12","Upwelling","Montipora","C","C15",4,"none","none","Yes",84,84,84,84,84,294,84,"84","84",52,14.27
+"66","6/9/12","Upwelling","Montipora","C","C15",6,"none","none","Yes",86,83,83,83,83,295,83,"83","83",58,14.27
+"63","6/9/12","Upwelling","Montipora","C","C15",3,"none","none","Yes",83,86,86,86,86,296,86,"86","86",58,15.52
+"71","6/9/12","Upwelling","Montipora","D","C15",1,"none","none","Yes",91,88,88,88,88,298,88,"88","88",61,19.28
+"73","6/9/12","Upwelling","Montipora","D","C15",3,"none","none","Yes",93,87,87,115,87,299,87,"87","87",52,15.77
+"76","6/9/12","Upwelling","Montipora","D","C15",6,"none","none","Yes",96,90,90,90,90,300,90,"90","90",57,13.77
+"80","6/9/12","Upwelling","Montipora","D","C15",10,"none","none","Yes",100,91,91,91,91,302,91,"91","91",49,18.78

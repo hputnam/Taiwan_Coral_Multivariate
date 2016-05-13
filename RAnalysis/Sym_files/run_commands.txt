@@ -1,0 +1,23 @@
+sed 's/>T./>/g' Taiwan.fasta > Taiwan_formatted.fasta
+sed 's/.ITSDF//g' Taiwan_formatted.fasta > Taiwan_formatted2.fasta
+/home/hputnam/Taiwan_Sym/deal_with_texas.py -f Taiwan_formatted2.fasta -o Taiwan_formatted_ST.fasta ## This is the raw file for upload
+#Taiwan_formatted_ST.fasta ## This is the raw file for upload
+~hputnam/programs/cutadapt-1.8.3/bin/cutadapt -g GTGAATTGCAGAACTCCGTG -e 0.15 -O 18 --discard-untrimmed Taiwan_formatted_ST.fasta -o Taiwan_trimF.fasta
+~hputnam/programs/cutadapt-1.8.3/bin/cutadapt -g GTGAATTGCAGAACTCCGTG -e 0.15 -O 18 Taiwan_trimF.fasta -o Taiwan_trimF2.fasta
+~hputnam/programs/cutadapt-1.8.3/bin/cutadapt -a AAGCATATAAGTAAGCGGAGG -e 0.15 -O 18 Taiwan_trimF2.fasta -o Taiwan_trimF2_trimR.fasta
+~hputnam/programs/cutadapt-1.8.3/bin/cutadapt -a AAGCATATAAGTAAGCGGAGG -e 0.15 -O 18 Taiwan_trimF2_trimR.fasta -o Taiwan_trimmed.fasta
+~hputnam/programs/qiime-1.9.1/scripts/count_seqs.py -i Taiwan_trimmed.fasta
+
+
+/home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 24 clade -i Taiwan_trimmed.fasta -s Taiwan.ids -e 1e-20 --hmmdb /home/hputnam/Taiwan_Sym/symTyper/database/HMMER_ITS2_DB/All_Clades.hmm
+/home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 24 subtype -s Taiwan.ids -H hmmer_hits/ -b blast_output/ -r blastResults/ -f fasta --blastdb /home/hputnam/Taiwan_Sym/symTyper/database/blast_DB/ITS2_Database_04_23_13.fas
+/home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 20 resolveMultipleHits -s Taiwan.ids -m blastResults/MULTIPLE/ -c resolveMultiples/
+xvfb-run /home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 24 buildPlacementTree -c resolveMultiples/correctedMultiplesHits/corrected -n /home/hputnam/Taiwan_Sym/symTyper/database/clades_phylogenies -o placementInfo
+/home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 20 stats --outputs_dir . -i Taiwan_trimmed.fasta --out_file ./outputfile
+/home/hputnam/Taiwan_Sym/symTyper/commands/symTyper.py -t 20 makeTSV --outputs_dir .
+
+
+/home/hputnam/programs/qiime-1.9.1/scripts/pick_otus.py -i Taiwan_new_seqs_for_QIIME.fasta -s 0.97 -o new_otus
+
+
+assign_taxonomy.py -i new_otus/rep_set.fasta -r /home/hputnam/Taiwan_Sym/symTyper/database/blast_DB/ITS2_Database_04_23_13.fas -m blast -o new_otus/blast_taxonomy

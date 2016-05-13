@@ -1,0 +1,679 @@
+Linear mixed-effects model fit by maximum likelihood
+ Data: multi.data.des 
+       AIC     BIC    logLik
+  49.50348 60.7799 -17.75174
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:   0.1762819
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)  Residual
+StdDev:   0.1762821 0.3564685
+
+Fixed effects: PC1 ~ Habitat * Species 
+                                         Value Std.Error DF   t-value p-value
+(Intercept)                          0.0170597 0.2252750 31  0.075728  0.9401
+HabitatUpwelling                    -1.1423308 0.3185931  2 -3.585548  0.0697
+SpeciesPocillopora                   0.5136773 0.1736491 31  2.958134  0.0059
+HabitatUpwelling:SpeciesPocillopora  1.1643550 0.2492714 31  4.671033  0.0001
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.407  0.288       
+HabitatUpwelling:SpeciesPocillopora  0.283 -0.402 -0.697
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-2.0700494 -0.4058717 -0.1495493  0.6058720  1.9040001 
+
+Number of Observations: 37
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+Linear mixed-effects model fit by maximum likelihood
+ Data: multi.data.des 
+       AIC      BIC    logLik
+  56.76053 68.03696 -21.38027
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 1.141348e-05
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)  Residual
+StdDev: 1.14316e-05 0.4312387
+
+Fixed effects: PC2 ~ Habitat * Species 
+                                         Value Std.Error DF   t-value p-value
+(Intercept)                          0.9820376 0.1522090 31  6.451902  0.0000
+HabitatUpwelling                    -1.0146498 0.2152561  2 -4.713688  0.0422
+SpeciesPocillopora                  -1.2942574 0.2098057 31 -6.168839  0.0000
+HabitatUpwelling:SpeciesPocillopora  0.7243551 0.3005887 31  2.409788  0.0221
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.725  0.513       
+HabitatUpwelling:SpeciesPocillopora  0.506 -0.716 -0.698
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.12617139 -0.61767750 -0.06058811  0.69519396  1.96134460 
+
+Number of Observations: 37
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    31  0.00024  0.9879
+Habitat             1     2  3.87485  0.1879
+Species             1    31 74.97441  <.0001
+Habitat:Species     1    31 21.81855  0.0001
+                numDF denDF  F-value p-value
+(Intercept)         1    31  0.00000  1.0000
+Habitat             1     2 16.95345  0.0542
+Species             1    31 39.25705  <.0001
+Habitat:Species     1    31  5.80708  0.0221
+Linear mixed-effects model fit by maximum likelihood
+ Data: sym.PC.scores 
+        AIC       BIC   logLik
+  -68.64106 -57.36464 41.32053
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev: 0.007126871
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)   Residual
+StdDev: 0.007126868 0.07860173
+
+Fixed effects: PC1 ~ Habitat * Species 
+                                         Value  Std.Error DF    t-value p-value
+(Intercept)                          0.3486901 0.02876172 31  12.123409  0.0000
+HabitatUpwelling                     0.4024120 0.04067527  2   9.893284  0.0101
+SpeciesPocillopora                  -0.8659717 0.03824916 31 -22.640281  0.0000
+HabitatUpwelling:SpeciesPocillopora -0.4107311 0.05481614 31  -7.492886  0.0000
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.700  0.495       
+HabitatUpwelling:SpeciesPocillopora  0.489 -0.691 -0.698
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-1.87547443 -0.29207560 -0.10651296  0.08391843  5.07213534 
+
+Number of Observations: 37
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+Linear mixed-effects model fit by maximum likelihood
+ Data: sym.PC.scores 
+        AIC      BIC   logLik
+  -1.755395 9.521031 7.877697
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 8.029192e-07
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept)  Residual
+StdDev: 8.026925e-07 0.1955676
+
+Fixed effects: PC2 ~ Habitat * Species 
+                                         Value  Std.Error DF    t-value p-value
+(Intercept)                          0.6524612 0.06902708 31   9.452250  0.0000
+HabitatUpwelling                    -1.0606555 0.09761903  2 -10.865253  0.0084
+SpeciesPocillopora                  -0.7660889 0.09514726 31  -8.051613  0.0000
+HabitatUpwelling:SpeciesPocillopora  1.0562693 0.13631756 31   7.748593  0.0000
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.725  0.513       
+HabitatUpwelling:SpeciesPocillopora  0.506 -0.716 -0.698
+
+Standardized Within-Group Residuals:
+         Min           Q1          Med           Q3          Max 
+-5.378133949 -0.060336073 -0.003712531  0.217567799  1.092574423 
+
+Number of Observations: 37
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF   F-value p-value
+(Intercept)         1    31    0.0002  0.9900
+Habitat             1     2   56.0566  0.0174
+Species             1    31 1513.6178  <.0001
+Habitat:Species     1    31   56.1433  <.0001
+                numDF denDF  F-value p-value
+(Intercept)         1    31  0.00000  1.0000
+Habitat             1     2 56.58410  0.0172
+Species             1    31 13.62401  0.0009
+Habitat:Species     1    31 60.04069  <.0001
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+        AIC     BIC   logLik
+  -7.723092 3.92184 10.86155
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 6.485379e-07
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept)  Residual
+StdDev: 6.498738e-07 0.1831518
+
+Fixed effects: log10(LPO) ~ Habitat * Species 
+                                         Value  Std.Error DF  t-value p-value
+(Intercept)                          2.3806383 0.06444487 33 36.94070  0.0000
+HabitatUpwelling                    -0.6295938 0.08883112  2 -7.08754  0.0193
+SpeciesPocillopora                   0.1572251 0.08883112 33  1.76993  0.0860
+HabitatUpwelling:SpeciesPocillopora  0.4324925 0.12396218 33  3.48891  0.0014
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.725              
+SpeciesPocillopora                  -0.725  0.526       
+HabitatUpwelling:SpeciesPocillopora  0.520 -0.717 -0.717
+
+Standardized Within-Group Residuals:
+         Min           Q1          Med           Q3          Max 
+-2.264440005 -0.501429537 -0.008606933  0.609091928  2.151506601 
+
+Number of Observations: 39
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    33 5278.830  <.0001
+Habitat             1     2   45.434  0.0213
+Species             1    33   37.480  <.0001
+Habitat:Species     1    33   12.172  0.0014
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  387.5047 404.0016 -186.7523
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:    0.349919
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept) Residual
+StdDev:    0.349919 2.616287
+
+Fixed effects: Tissue ~ Habitat * Species 
+                                        Value Std.Error DF   t-value p-value
+(Intercept)                          9.715109 0.7134491 72 13.617102  0.0000
+HabitatUpwelling                     2.809731 0.9994095  2  2.811391  0.1067
+SpeciesPocillopora                  -1.230295 0.8714753 72 -1.411738  0.1623
+HabitatUpwelling:SpeciesPocillopora -3.103135 1.2169490 72 -2.549930  0.0129
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.714              
+SpeciesPocillopora                  -0.611  0.436       
+HabitatUpwelling:SpeciesPocillopora  0.437 -0.609 -0.716
+
+Standardized Within-Group Residuals:
+          Min            Q1           Med            Q3           Max 
+-2.5979896752 -0.6155781383  0.0005112644  0.4210402847  4.0618273336 
+
+Number of Observations: 78
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    72 603.6865  <.0001
+Habitat             1     2   2.5183  0.2534
+Species             1    72  21.5182  <.0001
+Habitat:Species     1    72   6.5021  0.0129
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  322.3507 338.8477 -154.1753
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:   0.2125027
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept) Residual
+StdDev:   0.2125027 1.725923
+
+Fixed effects: AFDW ~ Habitat * Species 
+                                        Value Std.Error DF   t-value p-value
+(Intercept)                          4.724418 0.4614499 72 10.238203  0.0000
+HabitatUpwelling                     2.798167 0.6461622  2  4.330441  0.0494
+SpeciesPocillopora                   0.614403 0.5748982 72  1.068715  0.2888
+HabitatUpwelling:SpeciesPocillopora -2.631546 0.8028016 72 -3.277952  0.0016
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.714              
+SpeciesPocillopora                  -0.623  0.445       
+HabitatUpwelling:SpeciesPocillopora  0.446 -0.621 -0.716
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.34530547 -0.58145134 -0.07289286  0.54808300  3.56648726 
+
+Number of Observations: 78
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    72 522.2292  <.0001
+Habitat             1     2   8.5705  0.0996
+Species             1    72   3.3561  0.0711
+Habitat:Species     1    72  10.7450  0.0016
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  251.0605 267.7346 -118.5302
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 1.901745e-05
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept) Residual
+StdDev: 1.902126e-05 1.064696
+
+Fixed effects: C13 ~ Habitat * Species 
+                                         Value Std.Error DF   t-value p-value
+(Intercept)                         -14.981397 0.2442580 74 -61.33431  0.0000
+HabitatUpwelling                      3.185739 0.3454330  2   9.22245  0.0116
+SpeciesPocillopora                   -0.896861 0.3454330 74  -2.59634  0.0114
+HabitatUpwelling:SpeciesPocillopora  -4.267029 0.4885161 74  -8.73467  0.0000
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.707  0.500       
+HabitatUpwelling:SpeciesPocillopora  0.500 -0.707 -0.707
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-2.8902477 -0.6142916  0.1526828  0.7052120  2.3945764 
+
+Number of Observations: 80
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF   F-value p-value
+(Intercept)         1    74 14891.944  <.0001
+Habitat             1     2    18.557  0.0499
+Species             1    74   153.920  <.0001
+Habitat:Species     1    74    76.295  <.0001
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+        AIC       BIC   logLik
+  -46.18806 -29.51388 30.09403
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:  0.04994813
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)  Residual
+StdDev:  0.04994813 0.1596249
+
+Fixed effects: log10(Sulf) ~ Habitat * Species 
+                                         Value  Std.Error DF    t-value p-value
+(Intercept)                          0.0339103 0.06298555 74   0.538382  0.5919
+HabitatUpwelling                    -0.0397932 0.08907502  2  -0.446738  0.6988
+SpeciesPocillopora                  -0.9001307 0.05178914 74 -17.380683  0.0000
+HabitatUpwelling:SpeciesPocillopora  0.0499819 0.07324091 74   0.682432  0.4971
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.411  0.291       
+HabitatUpwelling:SpeciesPocillopora  0.291 -0.411 -0.707
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.99049525 -0.77585726 -0.02714669  0.74997914  1.83046195 
+
+Number of Observations: 80
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    74 108.8376  <.0001
+Habitat             1     2   0.0332  0.8722
+Species             1    74 571.0936  <.0001
+Habitat:Species     1    74   0.4657  0.4971
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  28.26235 44.75931 -7.131175
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 3.127414e-06
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept)  Residual
+StdDev: 3.124483e-06 0.2651358
+
+Fixed effects: SolPro.mgcm2 ~ Habitat * Species 
+                                         Value  Std.Error DF   t-value p-value
+(Intercept)                          0.6827368 0.06244864 72 10.932774  0.0000
+HabitatUpwelling                     0.4857632 0.08720478  2  5.570373  0.0307
+SpeciesPocillopora                   0.1565789 0.08831571 72  1.772946  0.0805
+HabitatUpwelling:SpeciesPocillopora -0.5238289 0.12332618 72 -4.247508  0.0001
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.716              
+SpeciesPocillopora                  -0.707  0.506       
+HabitatUpwelling:SpeciesPocillopora  0.506 -0.707 -0.716
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-2.0385781 -0.6705973 -0.1168964  0.5888865  3.5057509 
+
+Number of Observations: 78
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    72 807.4679  <.0001
+Habitat             1     2  13.1783  0.0682
+Species             1    72   3.3042  0.0733
+Habitat:Species     1    72  18.0413  0.0001
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  176.0063 192.5032 -81.00314
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:  0.03159522
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept) Residual
+StdDev:  0.03159523 0.682156
+
+Fixed effects: TotPro.mgcm2 ~ Habitat * Species 
+                                         Value Std.Error DF   t-value p-value
+(Intercept)                          0.7728172 0.1639213 72  4.714563  0.0000
+HabitatUpwelling                     1.2424535 0.2290129  2  5.425255  0.0323
+SpeciesPocillopora                   0.8558318 0.2272236 72  3.766475  0.0003
+HabitatUpwelling:SpeciesPocillopora -1.1171095 0.3173004 72 -3.520668  0.0008
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.716              
+SpeciesPocillopora                  -0.693  0.496       
+HabitatUpwelling:SpeciesPocillopora  0.496 -0.693 -0.716
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-1.6213355 -0.6646878 -0.2438370  0.3379506  3.9431342 
+
+Number of Observations: 78
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    72 352.8773  <.0001
+Habitat             1     2  17.1469  0.0537
+Species             1    72   3.1830  0.0786
+Habitat:Species     1    72  12.3951  0.0008
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+        AIC       BIC   logLik
+  -57.28553 -40.78857 35.64276
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 1.332769e-06
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept)  Residual
+StdDev: 1.333322e-06 0.1532175
+
+Fixed effects: log10(Chla.ugcm2) ~ Habitat * Species 
+                                         Value  Std.Error DF   t-value p-value
+(Intercept)                          0.5164314 0.03608801 72 14.310333  0.0000
+HabitatUpwelling                     0.2137079 0.05039416  2  4.240728  0.0514
+SpeciesPocillopora                   0.1567554 0.05103615 72  3.071458  0.0030
+HabitatUpwelling:SpeciesPocillopora -0.1949059 0.07126810 72 -2.734826  0.0079
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.716              
+SpeciesPocillopora                  -0.707  0.506       
+HabitatUpwelling:SpeciesPocillopora  0.506 -0.707 -0.716
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.39453052 -0.59942182 -0.05933367  0.36777779  4.01916708 
+
+Number of Observations: 78
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF   F-value p-value
+(Intercept)         1    72 1350.0122  <.0001
+Habitat             1     2   10.6437  0.0825
+Species             1    72    2.5428  0.1152
+Habitat:Species     1    72    7.4793  0.0079
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  40.69735 53.64838 -13.34868
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev:  0.03186958
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)  Residual
+StdDev:  0.03186958 0.3185706
+
+Fixed effects: Resp.area ~ Habitat * Species 
+                                         Value Std.Error DF   t-value p-value
+(Intercept)                          1.0528333 0.1017553 41 10.346717  0.0000
+HabitatUpwelling                    -0.2610833 0.1439037  2 -1.814292  0.2113
+SpeciesPocillopora                  -0.5341667 0.1359705 41 -3.928548  0.0003
+HabitatUpwelling:SpeciesPocillopora  0.1440495 0.1944834 41  0.740678  0.4631
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.668  0.472       
+HabitatUpwelling:SpeciesPocillopora  0.467 -0.661 -0.699
+
+Standardized Within-Group Residuals:
+         Min           Q1          Med           Q3          Max 
+-2.035590493 -0.608643498  0.008435871  0.544383827  2.807920149 
+
+Number of Observations: 47
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF   F-value p-value
+(Intercept)         1    41 166.64026  <.0001
+Habitat             1     2   2.79270  0.2367
+Species             1    41  22.75584  <.0001
+Habitat:Species     1    41   0.54860  0.4631
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+        AIC       BIC   logLik
+  -176.5313 -163.5802 95.26563
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 4.656218e-07
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept)   Residual
+StdDev: 4.66016e-07 0.03187712
+
+Fixed effects: Resp.Biom ~ Habitat * Species 
+                                          Value   Std.Error DF   t-value p-value
+(Intercept)                          0.10816667 0.009620621 41 11.243210  0.0000
+HabitatUpwelling                    -0.04491667 0.013605613  2 -3.301334  0.0808
+SpeciesPocillopora                  -0.03991667 0.013605613 41 -2.933838  0.0055
+HabitatUpwelling:SpeciesPocillopora  0.03057576 0.019458664 41  1.571318  0.1238
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.707  0.500       
+HabitatUpwelling:SpeciesPocillopora  0.494 -0.699 -0.699
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.16979058 -0.67969343  0.05489832  0.50073918  2.19070422 
+
+Number of Observations: 47
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF   F-value p-value
+(Intercept)         1    41 230.52779  <.0001
+Habitat             1     2   9.15605  0.0941
+Species             1    41   6.58922  0.0140
+Habitat:Species     1    41   2.46904  0.1238
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC      BIC    logLik
+  311.2083 324.1593 -148.6041
+
+Random effects:
+ Formula: ~1 | Site
+        (Intercept)
+StdDev: 0.001178037
+
+ Formula: ~1 | Habitat %in% Site
+        (Intercept) Residual
+StdDev:  0.00117874 5.713614
+
+Fixed effects: rank(CAT) ~ Habitat * Species 
+                                        Value Std.Error DF    t-value p-value
+(Intercept)                          42.00000  1.801065 41  23.319537   0.000
+HabitatUpwelling                    -35.16667  2.493462  2 -14.103553   0.005
+SpeciesPocillopora                  -17.00000  2.493461 41  -6.817833   0.000
+HabitatUpwelling:SpeciesPocillopora  33.83333  3.487746 41   9.700629   0.000
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.722              
+SpeciesPocillopora                  -0.722  0.522       
+HabitatUpwelling:SpeciesPocillopora  0.516 -0.715 -0.715
+
+Standardized Within-Group Residuals:
+          Min            Q1           Med            Q3           Max 
+-2.275268e+00 -7.000820e-01  2.828962e-07  7.292524e-01  1.983566e+00 
+
+Number of Observations: 47
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    41 758.6976  <.0001
+Habitat             1     2 105.2315  0.0094
+Species             1    41   0.0282  0.8675
+Habitat:Species     1    41  94.1022  <.0001
+Linear mixed-effects model fit by maximum likelihood
+ Data: data 
+       AIC       BIC   logLik
+  -206.077 -189.4028 110.0385
+
+Random effects:
+ Formula: ~1 | Site
+         (Intercept)
+StdDev: 5.175681e-07
+
+ Formula: ~1 | Habitat %in% Site
+         (Intercept)   Residual
+StdDev: 5.174314e-07 0.06115033
+
+Fixed effects: FFA ~ Habitat * Species 
+                                       Value  Std.Error DF   t-value p-value
+(Intercept)                          0.24655 0.01402885 74 17.574500  0.0000
+HabitatUpwelling                     0.04190 0.01983979  2  2.111918  0.1691
+SpeciesPocillopora                  -0.08100 0.01983979 74 -4.082705  0.0001
+HabitatUpwelling:SpeciesPocillopora -0.04975 0.02805770 74 -1.773132  0.0803
+ Correlation: 
+                                    (Intr) HbttUp SpcsPc
+HabitatUpwelling                    -0.707              
+SpeciesPocillopora                  -0.707  0.500       
+HabitatUpwelling:SpeciesPocillopora  0.500 -0.707 -0.707
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-2.2640924 -0.7340516 -0.1410458  0.5831939  2.1512557 
+
+Number of Observations: 80
+Number of Groups: 
+             Site Habitat %in% Site 
+                4                 4 
+                numDF denDF  F-value p-value
+(Intercept)         1    74 935.6719  <.0001
+Habitat             1     2   1.4728  0.3488
+Species             1    74  56.9564  <.0001
+Habitat:Species     1    74   3.1440  0.0803
+
+Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel(xdis = multiphys.euc.dist, ydis = sym.bray.dist, method = "spearman",      permutations = 999) 
+
+Mantel statistic r: 0.4402 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0740 0.0922 0.1082 0.1260 
+
+Based on 999 permutations
+
+                                                                                                                              size
+Sulf                                                                                                                             1
+Sulf C13                                                                                                                         2
+CAT Sulf C13                                                                                                                     3
+CAT TAG Sulf C13                                                                                                                 4
+LPO CAT TAG Sulf C13                                                                                                             5
+LPO CAT TAG FFA Sulf C13                                                                                                         6
+Resp.area LPO CAT TAG FFA Sulf C13                                                                                               7
+Resp.area LPO CAT WE.SE TAG FFA Sulf C13                                                                                         8
+SolPro.mgcm2 Resp.area LPO CAT WE.SE TAG FFA Sulf C13                                                                            9
+SolPro.mgcm2 Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                                    10
+Chla.ugcm2 SolPro.mgcm2 Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                         11
+Chla.ugcm2 SolPro.mgcm2 Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                 12
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                          13
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf PE C13                                       14
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE C13                             15
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE PC C13                          16
+Chla.ugcm2 SolPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE PC C13                     17
+Chla.ugcm2 SolPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Chol Sulf PE PC C13                18
+Chla.ugcm2 SolPro.mgcm2 TotPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Chol Sulf PE PC C13   19
+                                                                                                                              correlation
+Sulf                                                                                                                               0.6355
+Sulf C13                                                                                                                           0.6709
+CAT Sulf C13                                                                                                                       0.6801
+CAT TAG Sulf C13                                                                                                                   0.6990
+LPO CAT TAG Sulf C13                                                                                                               0.7021
+LPO CAT TAG FFA Sulf C13                                                                                                           0.6923
+Resp.area LPO CAT TAG FFA Sulf C13                                                                                                 0.6823
+Resp.area LPO CAT WE.SE TAG FFA Sulf C13                                                                                           0.6799
+SolPro.mgcm2 Resp.area LPO CAT WE.SE TAG FFA Sulf C13                                                                              0.6575
+SolPro.mgcm2 Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                                       0.6367
+Chla.ugcm2 SolPro.mgcm2 Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                            0.6202
+Chla.ugcm2 SolPro.mgcm2 Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                                    0.6049
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf C13                                             0.5859
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area LPO CAT Lipids WE.SE TAG FFA Sulf PE C13                                          0.5701
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE C13                                0.5558
+Chla.ugcm2 SolPro.mgcm2 Tissue Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE PC C13                             0.5376
+Chla.ugcm2 SolPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Sulf PE PC C13                        0.5197
+Chla.ugcm2 SolPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Chol Sulf PE PC C13                   0.5019
+Chla.ugcm2 SolPro.mgcm2 TotPro.mgcm2 Tissue AFDW Density Resp.area Resp.Biom LPO CAT Lipids WE.SE TAG FFA Chol Sulf PE PC C13      0.4847
