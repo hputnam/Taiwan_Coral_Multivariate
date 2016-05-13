@@ -1,3 +1,8 @@
 #files to ingore in git repo
 symTyper-master/
+<<<<<<< HEAD
 *.fna
+Taiwan_Notebook.pdf
+=======
+*.fna
+>>>>>>> 38913edc3f8f2d0e628295a20c473773bb127882
