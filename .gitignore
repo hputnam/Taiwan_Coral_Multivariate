@@ -1,0 +1,4 @@
+#files to ingore in git repo
+symTyper-master/
+*.fna
+Taiwan_Notebook.pdf
