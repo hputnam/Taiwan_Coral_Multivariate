@@ -1,5 +1,5 @@
-#last modified 20160305
-#Copyright 2016 HM Putnam
+#last modified 20170221
+#Copyright 2017 HM Putnam
 #Use of this code must be accompanied by a citation to XXXX
 #Data should not be used without permission from HM Putnam
 #See Readme
@@ -16,6 +16,8 @@ library("mvoutlier")
 library("mvnormtest")
 library("plyr")
 library("reshape2")
+library("psych")
+library("corrplot")
 
 #Required files
 
@@ -91,6 +93,8 @@ write.csv(multi.info, file="/Users/hputnam/MyProjects/Taiwan_Coral_Multivariate/
 # apply PCA to scaled and transformed data matrix
 pca.res <- prcomp(sc.multi.data, retx=TRUE)
 summary(pca.res)
+ev <- pca.res$sdev^2
+plot(ev)
 
 # singular values (square roots of eigenvalues) stored in $sdev
 # sample scores stored in $x
@@ -104,10 +108,12 @@ PC.scores <- as.data.frame(pca.res$x)
 #use scree diagram to determine break in majority versus minority variation explaination components
 screeplot(pca.res, type="lines")
 PC.scores <- PC.scores[,1:2] #select first two components
+scree(sc.multi.data) #plot scree plot with Cattell's scree test of eigenvalue >1
+#retain PCs  1-4
 
 #extract components loadings (correlations between components and original variables)
 eigenvectors <- as.data.frame(pca.res$rotation)
-eigenvectors <-  eigenvectors[,1:2] #subset first two PC's eigenvectors
+eigenvectors <-  eigenvectors[,1:5] #subset first two PC's eigenvectors
 write.csv(eigenvectors, file="/Users/hputnam/MyProjects/Taiwan_Coral_Multivariate/RAnalysis/Output/Table2_Physiological_component_loadings.csv")
 eigenvectors <-  eigenvectors*3 #scale eigenvectors to plot
 
@@ -245,6 +251,7 @@ sym.PC.scores <- as.data.frame(sym.pca.res$x)
 #use scree diagram to determine break in majority versus minority variation explaination components
 screeplot(sym.pca.res, type="lines")
 sym.PC.scores <- sym.PC.scores[,1:2] #select first two components
+scree(Trans.Rel.Sym.Data) #plot scree plot with Cattell's scree test of eigenvalue >1
 
 #extract components loadings (correlations between components and original variables)
 sym.eigenvectors <- as.data.frame(sym.pca.res$rotation)
@@ -644,6 +651,28 @@ text(3,0.395, "C15")
 lines(c(4.4,8.4), c(0.36,0.36))
 text(6.5,0.395, "C1")
 title("F", line = 2, adj=0)
+dev.off()
+
+
+
+# Extract data for correlation plot of only Montipora data separated by upwelling and non-upwelling
+Mont <- subset(data, Species=="Montipora") #subset Montipora data
+Mont.Up <- subset(Mont, Habitat="Upwelling") #subset upwelling data
+Mont.Up <- Mont.Up[,21:39] #subset trait data
+colnames(Mont.Up) <- c("Chl-a",  "Soluble Protein",  "Total Protein",  "Dry Tissue",	"AFDW",	"Cell Density",	"Resp cm-2",	"Resp mg-1",	"LPO",	"CAT",	"Lipids",	"WESE",	"TAG",	"FFA",	"Chol",	"Sulf",	"PE",	"PC",	"13C")
+
+M.U.cor <- cor(Mont.Up, use="pairwise.complete.obs", method = "spearman") #calculate trait correlations with pairwise.complete.obs removal for missing data
+Mont.Non <- subset(Mont, Habitat=="NonUpwelling") #subset Nonupwelling data
+Mont.Non <- Mont.Non[,21:39] #subset trait data
+colnames(Mont.Non) <- c("Chl-a",  "Soluble Protein",  "Total Protein",  "Dry Tissue",	"AFDW",	"Cell Density",	"Resp cm-2",	"Resp mg-1",	"LPO",	"CAT",	"Lipids",	"WESE",	"TAG",	"FFA",	"Chol",	"Sulf",	"PE",	"PC",	"13C")
+M.N.cor <- cor(Mont.Non, use="pairwise.complete.obs", method = "spearman") #calculate trait correlations with pairwise.complete.obs removal for missing data
+
+# Plot correlations of traits for Montipora separately for NonUpwelling and Upwelling sites
+pdf("/Users/hputnam/MyProjects/Taiwan_Coral_Multivariate/RAnalysis/Output/Figure.Cors.pdf", width=7.5, height=4)
+par(mfrow=c(1,2), oma=c(0,0,2,0)) #Set plotting to 1 rows and 2 columns
+corrplot(M.N.cor, method="ellipse", order="hclust", addrect=4, main="NonUpwelling", mar=c(0,1,4,1), tl.cex=0.4, tl.col="black", cl.cex=0.4)
+corrplot(M.U.cor, method="ellipse", order="hclust", addrect=4, main="Upwelling", mar=c(0,1,4,1), tl.cex=0.4, tl.col="black", cl.cex=0.4)
+mtext(expression(paste(bold("MONTIPORA"))), side=3, outer=T)
 dev.off()
 
 ##### Comparison of Symbiont and Physiology Matrices #####
