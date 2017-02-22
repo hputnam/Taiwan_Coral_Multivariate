@@ -15,6 +15,7 @@ library("nlme")
 library("mvoutlier")
 library("mvnormtest")
 library("plyr")
+library("reshape")
 library("reshape2")
 library("psych")
 library("corrplot")
@@ -688,10 +689,86 @@ mantel.res <- mantel(multiphys.euc.dist, sym.bray.dist, method="spearman", permu
 mantel.res #view correlation between two dissimilarity matrices
 
 #uses scaled data 
-BEST <- bioenv(as.data.frame(Trans.Rel.Sym.Data), as.data.frame(sc.multi.data), index = "euclidean", method = "spearman", trace = F)
-BEST #Function finds the best subset of environmental variables, so that the Euclidean distances of scaled environmental variables have the maximum (rank) correlation with community dissimilarities.
-best.res <- summary(BEST) 
- 
+BEST.traits <- bioenv(as.data.frame(Trans.Rel.Sym.Data), as.data.frame(sc.multi.data), index = "euclidean", method = "spearman", trace = F)
+BEST.traits #Function finds the best subset of environmental variables, so that the Euclidean distances of scaled environmental variables have the maximum (rank) correlation with community dissimilarities.
+best.trait.res <- summary(BEST.traits) 
+
+# BEST.sym <- bioenv(as.data.frame(sc.multi.data), as.data.frame(Trans.Rel.Sym.Data), index = "euclidean", method = "spearman", trace = F)
+# BEST.sym #Function finds the best subset of community members, so that the Euclidean distances of scaled community members have the maximum (rank) correlation with community dissimilarities.
+# best.sym.res <- summary(BEST.sym) 
+
+# PROCRUSTES 
+procrust <-protest(pca.res, sym.pca.res, symmetric=T); print(pro) #configurations are scaled to equal dispersions and a symmetric version of the Procrustes statistic is computed
+procrust.ss<-signif(procrust$ss,2) #extract sum of squares
+procrust.p<-procrust$signif #extract p value
+procrust.corr<-signif(as.numeric(procrust[6]),3) #extract correlation in a symmetric Procrustes rotation
+
+limits<-data.frame(xlimits=c(range(procrust$X[,1]),range(procrust$Yrot[,1])),ylimits= c(range(procrust$X[,2]),range(procrust$Yrot[,2]))) #set x and y limits by ranges
+xlim<-c(min(limits[,1])+min(limits[,1])*0.01,max(limits[,1])+max(limits[,1])*0.02) #set x limits just larger than range
+ylim<-c(min(limits[,2])+min(limits[,2])*0.2,max(limits[,2])+max(limits[,2])*0.5)  #set y limits just larger than range
+plot(0,type='n', ylim=ylim, xlim=xlim)
+abline(0,0, v=0)
+lines(procrust, col='darkgray', main='', ylim=ylim, xlim=xlim)
+points(procrust$X, pch=c(21, 24)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=1.2) #traits
+points(procrust$Yrot, pch=c(16, 17)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=1.1) #communities
+legend(x="topleft", 
+       bty="n",
+       legend = c(expression(italic("Montipora Symbiont Community")), expression(italic("Montipora Multivariate Physiology")) , expression(italic("Pocillopora Symbiont Community")), expression(italic("Pocillopora Multivariate Physiology")), "Upwelling", "Non-Upwelling"),
+       pch = c(16, 21, 17, 24, 15, 15),
+       col=c("black", "black", "black", "black", "steelblue","coral"),
+       cex=0.8)
+
+
+##### Plotting Figure 2 #####
+dev.off()
+
+pdf("/Users/hputnam/MyProjects/Taiwan_Coral_Multivariate/RAnalysis/Output/Figure2.pdf", width = 7.5, height = 3 )
+par(cex.axis=0.8, cex.lab=0.8, mar=c(5, 5, 4, 2), mgp=c(3, 1, 0),las=1, mfrow=c(1,3))
+
+# Physiological Data plot of PC1 and PC2 with arrow segments for all PCs
+plot(PC.scores$PC1, PC.scores$PC2, xlim=c(-2,2), ylim=c(-2, 2), xlab=expression(bold("PC1 (29.1%)")), ylab=expression(bold("PC2 (23.7%)")), pch = c(21, 24)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=0.8)
+with(arrows, mapply("arrows",x0, y0, x1, y1, length=0.05,angle=30, lwd=0.8))
+text(arrows$x1-0.1, arrows$y1-0.1, arrows$res.var, cex = 0.8)
+text(-1.8,1.8, expression(bold("A")))
+
+# Symbiodinium Data plot of PC1 and PC2 with arrow segments for all PCs
+plot(sym.PC.scores$PC1, sym.PC.scores$PC2, xlim=c(-2,2), ylim=c(-2, 2), xlab=expression(bold("PC1 (52.4%)")), ylab=expression(bold("PC2 (31.7%)")), pch = c(16, 17)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=0.8)
+with(sym.arrows, mapply("arrows",x0, y0, x1, y1, length=0.05,angle=30, lwd=0.8))
+text(arw$x1-0.1, arw$y1-0.1, arw$type, cex = 0.8)
+text(-1.8,1.8, expression(bold("B")))
+legend(x="bottomleft", 
+       bty="n",
+       legend = c(expression(italic("Montipora ")), expression(italic("Pocillopora")), "Upwelling", "Non-Upwelling"),
+       pch = c(21, 24, 15, 15),
+       col=c("black", "black", "steelblue","coral"),
+       cex=0.6)
+
+plot(0,type='n', ylim=ylim, xlim=xlim, xlab=expression(bold("Dimension 1")), ylab=expression(bold("Dimension 2")))
+abline(0,0, v=0)
+lines(procrust, col='darkgray', main='', ylim=ylim, xlim=xlim)
+points(procrust$X, pch=c(21, 24)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=0.8) #traits
+points(procrust$Yrot, pch=c(16, 17)[as.numeric(multi.info$Species)], col=c("coral", "steelblue")[multi.info$Habitat], cex=0.6) #communities
+text(-0.13,0.277, expression(bold("C")))
+
+dev.off()
+
+
+##### Examination of Montipora Symbiodinium types from the literature
+CT.sym.data <- read.csv("https://coraltraits.org/traits/129.csv", as.is=TRUE)
+CT.sym.data.split <- transform(CT.sym.data, specie_name = colsplit(specie_name, split = "\\ ", names = c('genus', 'species')))
+Monti.Sym <- subset(CT.sym.data.split, specie_name=="Montipora")
+Monti.Sym <- subset(Monti.Sym, trait_name=="Symbiodinium subclade")
+gen_sp <-Monti.Sym$specie_name
+Monti.Sym <- cbind(Monti.Sym, gen_sp)
+lit.types <- aggregate(access ~ genus*value, data=Monti.Sym, FUN=length)
+plot(as.factor(lit.types$value), lit.types$access)
+Monti.C15 <-  subset(Monti.Sym, value=="C15")
+Monti.C15f <-  subset(Monti.Sym, value=="C15f")
+Monti.C15g <-  subset(Monti.Sym, value=="C15g")
+Monti.C15h <-  subset(Monti.Sym, value=="C15h")
+Monti.C15k <-  subset(Monti.Sym, value=="C15k")
+Monti.C15m <-  subset(Monti.Sym, value=="C15m")
+
 
 ##### Save all Statistical Results #####
 
